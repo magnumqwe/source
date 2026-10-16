@@ -11,8 +11,7 @@ void free_matrix(int** a, size_t rows) {
     }
 }
 
-int** concat_rows(const int* const* lhs, size_t n1, size_t m1,
-                  const int* const* rhs, size_t n2, size_t m2) {
+int** concat_rows(const int* const* lhs, size_t n1, size_t m1,mconst int* const* rhs, size_t n2, size_t m2) {
     if (m1 > std::numeric_limits<std::size_t>::max() - m2) {
         return nullptr;
     }
@@ -85,8 +84,7 @@ int read_matrix(int**& matrix, size_t n, size_t m) {
     return 0;
 }
 
-void print_result(const int* const* res, size_t n1, size_t m1,
-                size_t n2, size_t m2) {
+void print_result(const int* const* res, size_t n1, size_t m1, size_t n2, size_t m2) {
     size_t rows = (n1 > n2) ? n1 : n2;
     for (size_t i = 0; i < rows; ++i) {
         size_t len = ((i < n1) ? m1 : 0) + ((i < n2) ? m2 : 0);
