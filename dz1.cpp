@@ -12,11 +12,11 @@ void free_matrix(int** a, size_t rows) {
 }
 
 int** concat_rows(const int* const* lhs, size_t n1, size_t m1, const int* const* rhs, size_t n2, size_t m2) {
-    if (m1 > std::numeric_limits<std::size_t>::max() - m2) {
+    if (m1 > std::numeric_limits<size_t>::max() - m2) {
         return nullptr;
     }
 
-    std::size_t rows = (n1 > n2) ? n1 : n2;
+    size_t rows = (n1 > n2) ? n1 : n2;
     int** result = new (std::nothrow) int*[rows]();
     if (result == nullptr) {
         return nullptr;
