@@ -16,7 +16,7 @@ int** concat_rows(const int* const* lhs, size_t n1, size_t m1, const int* const*
         return nullptr;
     }
 
-    std::size_t rows = (n1 > n2) ? n1 : n2;
+    size_t rows = (n1 > n2) ? n1 : n2;
     int** result = new (std::nothrow) int*[rows]();
     if (result == nullptr) {
         return nullptr;
@@ -32,10 +32,10 @@ int** concat_rows(const int* const* lhs, size_t n1, size_t m1, const int* const*
             return nullptr;
         }
 
-        for (std::size_t j = 0; j < len1; ++j) {
+        for (size_t j = 0; j < len1; ++j) {
             result[i][j] = lhs[i][j];
         }
-        for (std::size_t j = 0; j < len2; ++j) {
+        for (size_t j = 0; j < len2; ++j) {
             result[i][len1 + j] = rhs[i][j];
         }
     }
